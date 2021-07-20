@@ -1,0 +1,21 @@
+{
+    "name": "@destination/prettier-config",
+    "version": "1.0.0",
+    "description": "Default prettier config used by Destination",
+    "author": "Andy Palmer <andy.palmer@wearedestination.com>",
+    "license": "MIT",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "peerDependencies": {
+        "prettier": "^2.0.0"
+    },
+    "devDependencies": {
+        "prettier": "^2.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wearedestination/prettier-config.git"
+    }
+}
