@@ -3,5 +3,5 @@ module.exports = {
     tabWidth: 4,
     singleQuote: true,
     printWidth: 999,
-    arrowParens: 'avoid'
+    arrowParens: 'always'
 };
