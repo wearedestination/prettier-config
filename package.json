@@ -13,7 +13,7 @@
     "index.js"
   ],
   "dependencies": {
-    "@destination/prettier-plugin-twig": "^1.2.7"
+    "@destination/prettier-plugin-twig": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "^3.0.0"
