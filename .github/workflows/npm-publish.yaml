@@ -3,14 +3,19 @@ name: Publish to npm
 on:
   push:
     tags:
-      - "v*"
+      - 'v*'
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 
 jobs:
   publish:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Version check
         run: |
@@ -21,11 +26,9 @@ jobs:
           fi
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        uses: actions/setup-node@v6
         with:
-          node-version: 16
+          node-version: '24.x'
           registry-url: https://registry.npmjs.org/
       - run: |
           npm install
