@@ -1,5 +1,5 @@
 module.exports = {
   tabWidth: 4,
   printWidth: 120,
-  plugins: ["@destination/prettier-plugin-twig"]
+  plugins: [require.resolve("@destination/prettier-plugin-twig")]
 };
