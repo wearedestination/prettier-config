@@ -5,7 +5,7 @@ Defines a set of rules used by [Prettier](https://prettier.io/) to format our SC
 ## Installation
 
 ```sh
-yarn add @destination/prettier-config --dev
+npm add @destination/prettier-config --dev
 ```
 
 ## Usage
