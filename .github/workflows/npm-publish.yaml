@@ -34,5 +34,5 @@ jobs:
           if [ "$major" -ge "$latest_major" ]; then
             npm publish --access=public
           else
-            npm publish --access=public --tag "v$major"
+            npm publish --access=public --tag legacy
           fi
