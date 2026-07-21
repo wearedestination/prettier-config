@@ -3,19 +3,14 @@ name: Publish to npm
 on:
   push:
     tags:
-      - 'v*'
-
-permissions:
-  id-token: write  # Required for OIDC
-  contents: read
-
+      - "v*"
 
 jobs:
   publish:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v3
 
       - name: Version check
         run: |
@@ -26,10 +21,18 @@ jobs:
           fi
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v3
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         with:
-          node-version: '24.x'
+          node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: |
           npm install
-          npm publish --access=public
+          major=$(node -e 'console.log(require("./package.json").version.split(".")[0])')
+          latest_major=$(npm view "$(node -e 'console.log(require("./package.json").name)')" version | cut -d. -f1)
+          if [ "$major" -ge "$latest_major" ]; then
+            npm publish --access=public
+          else
+            npm publish --access=public --tag "v$major"
+          fi
