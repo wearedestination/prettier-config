@@ -13,12 +13,12 @@
     "index.js"
   ],
   "dependencies": {
-    "@destination/prettier-plugin-twig": "^2.0.0"
+    "@destination/prettier-plugin-twig": "^3.1.0"
   },
   "devDependencies": {
     "prettier": "^3.0.0"
   },
   "peerDependencies": {
-    "prettier": "^2.0.0||^3.0.0"
+    "prettier": "^3.0.0"
   }
 }
